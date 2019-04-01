@@ -12,7 +12,7 @@ for ITERATING through SEQUENCES, including selections from:
 Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
          Mark Hays, Amanda Stouder, Aaron Wilkin, their colleagues,
          and Micah Fletcher.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 
 def main():
@@ -104,9 +104,15 @@ def shortest_string(strings):
       :type strings: list[str]   or tuple(str)
     """
     # -------------------------------------------------------------------------
-    # TODO: 2. Implement and test this function.
+    # DONE: 2. Implement and test this function.
     #     The testing code is already written for you (above).
     # -------------------------------------------------------------------------
+    index_min = 0
+    for k in range(1, len(strings)):
+        if len(strings[k]) < len(strings[index_min]):
+            index_min = k
+
+    return strings[index_min]
 
 
 def run_test_index_of_largest_number():
@@ -181,9 +187,14 @@ def index_of_largest_number(numbers, n):
 
     """
     # -------------------------------------------------------------------------
-    # TODO: 3. Implement and test this function.
+    # DONE: 3. Implement and test this function.
     #     The testing code is already written for you (above).
     # -------------------------------------------------------------------------
+    index_min = 0
+    for k in range(1, n):
+        if numbers[k] > numbers[index_min]:
+            index_min = k
+    return index_min
 
 
 # -----------------------------------------------------------------------------
@@ -236,9 +247,14 @@ def number_of_stutters(s):
        :type s: str
     """
     # -------------------------------------------------------------------------
-    # TODO: 4. Implement and test this function.
+    # DONE: 4. Implement and test this function.
     #     The testing code is already written for you (above).
     # -------------------------------------------------------------------------
+    count = 0
+    for k in range( 1, len(s)):
+        if s[k] == s[k - 1]:
+            count = count + 1
+    return count
 
 
 def run_test_is_palindrome():
